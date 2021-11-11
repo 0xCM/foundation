@@ -1,6 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
       <ZLib>$(Src)z0.lib\z0.lib.csproj</ZLib>
+      <AsmM>$(Src)z0.asmm\z0.asmm.csproj</AsmM>
     </PropertyGroup>
-
 </Project>

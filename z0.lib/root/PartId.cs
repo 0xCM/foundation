@@ -46,8 +46,8 @@ public enum PartId : byte
     [Symbol("cells")]
     Cells = 12,
 
-    [Symbol("sys")]
-    Sys = 13,
+    [Symbol("asmm")]
+    AsmM = 13,
 
     [Symbol("asci")]
     Asci = 14,

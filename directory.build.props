@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <ZLibVersion>0.0.11</ZLibVersion>
+    <ZLibVersion>0.0.13</ZLibVersion>
     <Version>$(ZLibVersion)</Version>
     <TieredCompilation>false</TieredCompilation>
     <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
