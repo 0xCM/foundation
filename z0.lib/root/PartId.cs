@@ -333,7 +333,7 @@ public enum PartId : byte
     [Symbol("asmz")]
     AsmZ = 112,
 
-    [Symbol("asmz")]
+    [Symbol("lib")]
     Lib = 128,
 
     // ~ Generated
