@@ -9,7 +9,6 @@ namespace Z0.Asm
 
     using static Root;
 
-
     [ApiHost]
     public readonly partial struct AsmOperands
     {
@@ -84,6 +83,5 @@ namespace Z0.Asm
         [MethodImpl(Inline), Op]
         public static AsmOperand op(m512 src)
             => new AsmOperand(src);
-
     }
 }
