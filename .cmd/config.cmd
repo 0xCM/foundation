@@ -6,6 +6,7 @@ set LibProjPath=%LibProjRoot%\z0.%LibProjId%.csproj
 set ToolProjId=tools
 set ToolProjRoot=%SlnRoot%\%ToolProjId%
 set ToolProjPath=%ToolProjRoot%\z0.%ToolProjId%.csproj
+set Tooling=%SlnRoot%\.tools
 
 set PkgDst=j:\cache\dev
 
