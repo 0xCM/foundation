@@ -92,6 +92,14 @@ namespace Z0
             return true;
         }
 
+        [CmdOp(".global-env")]
+        protected Outcome ShowEnvVars(CmdArgs args)
+        {
+            var vars = Z0.Env.vars();
+            iter(vars, v => Write(v));
+            return true;
+        }
+
         [CmdOp(".tool-settings")]
         protected Outcome ToolSettings(CmdArgs args)
         {
