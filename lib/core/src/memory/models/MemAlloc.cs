@@ -17,17 +17,17 @@ namespace Z0
 
         PageBank Memory;
 
-        Index<uint> Allocations;
+        Index<int> Allocations;
 
         public uint PageCapacity {get;}
 
         internal MemAlloc(uint pages)
         {
-            Memory = PageBank.alloc(pages);
             PageCapacity = pages;
-            Allocations = alloc<uint>(PageCapacity);
+            Memory = PageBank.alloc(PageCapacity);
+            Allocations = alloc<int>(PageCapacity);
             for(var i=0; i<PageCapacity; i++)
-                Allocations[i] = uint.MaxValue;
+                Allocations[i] = -1;
         }
 
         [MethodImpl(Inline)]
@@ -38,10 +38,9 @@ namespace Z0
         {
             for(var i=0u; i<PageCapacity; i++)
             {
-                ref readonly var index = ref Allocations[i];
-                if(index < PageCapacity)
+                if(Allocations[i] < 0)
                 {
-                    Allocations[index] = i;
+                    Allocations[i] = (int)i;
                     return PageAddress(i);
                 }
             }
@@ -53,8 +52,8 @@ namespace Z0
             for(var i=0u; i<PageCapacity; i++)
             {
                 ref readonly var index = ref Allocations[i];
-                if(index < PageCapacity && PageAddress(index) == src)
-                    Allocations[i] = uint.MaxValue;
+                if(Allocations[i] > 0 && PageAddress(i) == src)
+                    Allocations[i] = -1;
             }
         }
 

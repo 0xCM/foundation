@@ -97,6 +97,8 @@ namespace Z0
 
         public const string xed = nameof(xed);
 
+        public const string envdb = nameof(envdb);
+
         public const string objhex = obj + dot + hex;
     }
 }

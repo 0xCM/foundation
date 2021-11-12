@@ -32,5 +32,7 @@ namespace Z0
         public const string api = A.api;
 
         public const string docs = A.docs;
+
+        public const string envdb = A.envdb;
     }
 }

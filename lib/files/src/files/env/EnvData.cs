@@ -31,6 +31,9 @@ namespace Z0
         public FS.FolderPath Control
             => Source.Control;
 
+        public FS.FolderPath ZEnvDb
+            => Source.ZEnvDb;
+
         public FS.FolderPath Packages
             => Source.Packages;
 

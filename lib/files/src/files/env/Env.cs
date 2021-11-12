@@ -32,6 +32,7 @@ namespace Z0
         Env()
         {
             var dst = this;
+            dst.ZEnvDb = dir(N.ZEnvDb);
             dst.ZDev = dir(N.ZDev);
             dst.Db = dir(N.Db);
             dst.Control = dir(N.Control);
@@ -55,6 +56,8 @@ namespace Z0
             dst.LlvmRoot = dir(N.LlvmRoot);
             dst.Toolbase = dir(N.Toolbase);
         }
+
+        public EnvDirVar ZEnvDb;
 
         public EnvDirVar ZDev;
 
@@ -99,6 +102,7 @@ namespace Z0
         public EnvVar<ulong> CpuCount;
 
         public EnvDirVar DevWs;
+
 
         public EnvData Data
             => new EnvData(this);

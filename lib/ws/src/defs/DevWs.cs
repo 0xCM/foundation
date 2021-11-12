@@ -20,11 +20,14 @@ namespace Z0
 
         FS.FolderPath _OutRoot;
 
+        EnvData EnvData;
+
         [MethodImpl(Inline)]
         DevWs(FS.FolderPath root)
         {
             _WsRoot = root;
             _OutRoot = FS.dir("j:/ws/.out");
+            EnvData = Env.load().Data;
         }
 
         public FS.FolderPath Root
@@ -42,6 +45,9 @@ namespace Z0
             {
                 case api:
                     dst = Api();
+                break;
+                case envdb:
+                    dst = EnvDb();
                 break;
                 case asm:
                     dst = Asm();
@@ -87,6 +93,9 @@ namespace Z0
 
         public IWorkspace Asm()
             => AsmWs.create(_WsRoot + FS.folder(asm));
+
+        public IEnvWs EnvDb()
+            => EnvWs.create(EnvData.ZEnvDb);
 
         public IToolWs Tools()
             => ToolWs.create(_WsRoot + FS.folder(tools));

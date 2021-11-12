@@ -50,5 +50,7 @@ namespace Z0
         public const string LlvmRoot = "LlvmRoot";
 
         public const string Toolbase = "Toolbase";
+
+        public const string ZEnvDb = nameof(ZEnvDb);
     }
 }
