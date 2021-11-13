@@ -2,5 +2,6 @@
     <PropertyGroup>
       <ZLib>$(Src)lib\z0.lib.csproj</ZLib>
       <AsmM>$(Src)asm.models\z0.asm.models.csproj</AsmM>
+      <ZTools>$(Src)tools\z0.tools.csproj</ZTools>
     </PropertyGroup>
 </Project>

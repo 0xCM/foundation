@@ -85,6 +85,11 @@ namespace Z0
         public const BindingFlags BF_DeclaredPublicInstance = DeclaredOnly | Public | Instance;
 
         /// <summary>
+        /// Declared public static members
+        /// </summary>
+        public const BindingFlags BF_DeclaredPublicStatic = DeclaredOnly | Public | Static;
+
+        /// <summary>
         /// Declared static members, both public and non-public
         /// </summary>
         public const BindingFlags BF_DeclaredStatic = DeclaredOnly | BF_Public | BF_NonPublic | BF_Static;

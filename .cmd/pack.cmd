@@ -1,4 +1,6 @@
 @echo off
 call %~dp0config.cmd
 
-dotnet pack %SlnPath% -c Release --include-symbols --include-source --output %PkgDst%
+dotnet pack %SlnPath% -c Release --output %PkgDst%
+
+: --include-symbols --include-source

@@ -10,13 +10,6 @@ namespace Z0
 
     using static Root;
 
-    public readonly struct EqualityClaim
-    {
-        public static EqualityClaim<C> define<C>(C a, C b)
-            where C : IEquatable<C>
-                => (a,b);
-    }
-
     public readonly struct EqualityClaim<C> : IEqualityClaim<C>
         where C : IEquatable<C>
     {

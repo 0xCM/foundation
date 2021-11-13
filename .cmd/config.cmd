@@ -1,12 +1,20 @@
 @echo off
-set SlnRoot=j:\z0
+set SlnRoot=j:\z0\foundation
+set BuildRoot=%SlnRoot%\.build
 set LibProjId=lib
+set RtId=win-x64
+set Configuration=release
 set LibProjRoot=%SlnRoot%\%LibProjId%
 set LibProjPath=%LibProjRoot%\z0.%LibProjId%.csproj
 set ToolProjId=tools
 set ToolProjRoot=%SlnRoot%\%ToolProjId%
 set ToolProjPath=%ToolProjRoot%\z0.%ToolProjId%.csproj
 set Tooling=%SlnRoot%\.tools
-
+set TestProjId=test
+set TestExeName=ztest
+set TestProjRoot=%SlnRoot%\%TestProjId%
+set TestProjName=z0.%TestProjId%.csproj
+set TestProjPath=%TestProjRoot%\%TestProjName%
+set TestExePath=%BuildRoot%\bin\%Configuration%\z0.%TestProjId%\net6.0-windows\%RtId%\%TestExeName%.exe
 set PkgDst=j:\cache\dev
 

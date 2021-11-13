@@ -4,10 +4,12 @@
 //-----------------------------------------------------------------------------
 namespace Z0
 {
-    using Free = System.Security.SuppressUnmanagedCodeSecurityAttribute;
+    using System;
 
-    [Free]
-    public interface IClaim : IExpr
+    public readonly struct EqualityClaim
     {
+        public static EqualityClaim<C> define<C>(C a, C b)
+            where C : IEquatable<C>
+                => (a,b);
     }
 }
