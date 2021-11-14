@@ -179,6 +179,22 @@ namespace Z0.Asm
             }
         }
 
+        [Op]
+        public static uint render(in AsmHexCode src, ref uint i, Span<char> dst)
+        {
+            var i0 = i;
+            var count = src.Size;
+            var bytes = src.Bytes;
+            for(var j=0; j<count; j++)
+            {
+                ref readonly var b = ref skip(bytes, j);
+                Hex.render(LowerCase, (Hex8)b, ref i, dst);
+                if(j != count - 1)
+                    seek(dst, i++) = Chars.Space;
+            }
+            return i - i0;
+        }
+
         [MethodImpl(Inline), Op]
         public static bool eq(in AsmHexCode a, in AsmHexCode b)
             => a.Data.Equals(b.Data);
@@ -193,6 +209,22 @@ namespace Z0.Asm
             var dst = AsmHexCode.Empty;
             parse(src.Trim(), out dst);
             return dst;
+        }
+
+
+        [Op]
+        public static string bitstring(in AsmHexCode src)
+        {
+            if(src.IsEmpty)
+                return default;
+
+            CharBlocks.alloc(n256, out var block);
+            var dst = block.Data;
+            var count = AsmBitstring.render(src, dst);
+            if(count == 0)
+                return EmptyString;
+
+            return text.format(slice(dst, 0, count));
         }
 
         [MethodImpl(Inline), Op]
