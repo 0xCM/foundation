@@ -4,10 +4,6 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="$(ZLib)"/>
-    <ProjectReference Include="$(AsmM)"/>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Iced" Version="1.4.0" />
@@ -62,5 +58,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>sos.pdb</TargetPath>
     </ContentWithTargetPath>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\asm.models\z0.asm.models.csproj" />
+    <ProjectReference Include="..\lib\z0.lib.csproj" />
   </ItemGroup>
 </Project>

@@ -10,40 +10,10 @@ namespace Z0.Types
     using static Root;
     using static core;
 
-    using static Types.PrimalKind;
-
     [ApiHost]
     public readonly struct types
     {
         const NumericKind Closure = UnsignedInts;
-
-        [MethodImpl(Inline), Op]
-        public static CellType cell(uint content, uint storage, PrimalKind @class)
-            => new CellType(content, storage, @class);
-
-        [MethodImpl(Inline), Op]
-        public static CellType icell(uint content, uint storage)
-            => new CellType(content, storage, PrimalKind.SignedInt);
-
-        [MethodImpl(Inline), Op]
-        public static CellType icell(uint content)
-            => new CellType(content, content, PrimalKind.SignedInt);
-
-        [MethodImpl(Inline), Op]
-        public static CellType ucell(uint content, uint storage)
-            => new CellType(content, storage, PrimalKind.UnsignedInt);
-
-        [MethodImpl(Inline), Op]
-        public static CellType ucell(uint content)
-            => new CellType(content, content, PrimalKind.UnsignedInt);
-
-        [MethodImpl(Inline), Op]
-        public static CellType fcell(uint content, uint storage)
-            => new CellType(content, storage, PrimalKind.Float);
-
-        [MethodImpl(Inline), Op]
-        public static CellType fcell(uint content)
-            => new CellType(content, content, PrimalKind.Float);
 
         [MethodImpl(Inline)]
         public static Class<K,T> @class<K,T>(in Classifier<K,T> @class, uint ordinal)
@@ -112,30 +82,14 @@ namespace Z0.Types
                 => ClassCache.classifier<K,T>();
 
 
-        internal static string format(PrimalKind src)
-            => src switch{
-                UnsignedInt => "u",
-                SignedInt => "i",
-                Float => "f",
-                _ => EmptyString
-            };
+        internal static string format(PrimitiveKind src)
+            => src.ToString().ToLower();
 
-        internal static Outcome parse(char src, out PrimalKind dst)
+        internal static Outcome parse(char src, out PrimitiveKind dst)
         {
-            dst = PrimalKind.None;
-            switch(src)
-            {
-                case 'i':
-                    dst = PrimalKind.SignedInt;
-                break;
-                case 'u':
-                    dst = PrimalKind.UnsignedInt;
-                break;
-                case 'f':
-                    dst = PrimalKind.Float;
-                break;
-            }
-            return dst != 0;
+            var symbols = Symbols.index<PrimitiveKind>();
+            dst = default;
+            return false;
         }
 
         [MethodImpl(Inline)]

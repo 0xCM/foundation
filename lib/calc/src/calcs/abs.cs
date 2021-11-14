@@ -18,7 +18,6 @@ namespace Z0
             where T : unmanaged
                 => default(BitLogic<T>);
 
-
         [MethodImpl(Inline), Factory(Abs), Closures(SignedInts)]
         public static Abs<T> abs<T>()
             where T : unmanaged
@@ -28,7 +27,6 @@ namespace Z0
         public static Span<T> abs<T>(ReadOnlySpan<T> src, Span<T> dst)
             where T : unmanaged
                 => gcalc.apply(abs<T>(), src, dst);
-
 
         [MethodImpl(Inline), Factory(Abs), Closures(SignedInts)]
         public static Abs128<T> abs<T>(W128 w)

@@ -8,11 +8,11 @@ namespace Z0.Types
 
     using static Root;
 
-    public readonly struct PrimalClass : IIsomorhphic<PrimalClass,PrimalKind>
+    public readonly struct PrimalClass : IIsomorhphic<PrimalClass,PrimitiveKind>
     {
-        public PrimalKind Kind {get;}
+        public PrimitiveKind Kind {get;}
 
-        public PrimalClass(PrimalKind kind)
+        public PrimalClass(PrimitiveKind kind)
         {
             Kind = kind;
         }
@@ -24,11 +24,11 @@ namespace Z0.Types
             => Format();
 
         [MethodImpl(Inline)]
-        public static implicit operator PrimalClass(PrimalKind src)
+        public static implicit operator PrimalClass(PrimitiveKind src)
             => new PrimalClass(src);
 
         [MethodImpl(Inline)]
-        public static implicit operator PrimalKind(PrimalClass src)
+        public static implicit operator PrimitiveKind(PrimalClass src)
             => src.Kind;
     }
 }

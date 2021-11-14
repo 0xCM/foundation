@@ -18,6 +18,14 @@ namespace Z0
             where T : unmanaged
                 => inc_u(a);
 
+        [MethodImpl(Inline), Inc, Closures(AllNumeric)]
+        public static ref T inc<T>(ref T src)
+            where T : unmanaged
+        {
+            src = inc(src);
+            return ref src;
+        }
+
         [MethodImpl(Inline)]
         static T inc_u<T>(T a)
             where T : unmanaged

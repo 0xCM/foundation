@@ -2,16 +2,18 @@
 // Copyright   :  (c) Chris Moore, 2020
 // License     :  MIT
 //-----------------------------------------------------------------------------
-namespace Z0.Types
+namespace Z0
 {
-    public enum IndicatorKind : byte
+    public interface IChecks :
+        ICheckLengths,
+        ICheckPrimal,
+        ICheckPrimalSeq,
+        ICheckClose,
+        ICheckFiles,
+        ICheckInvariant,
+        ICheckSets,
+        ICheckNull
     {
-        U = 0,
 
-        I = 1,
-
-        F = 2,
-
-        C = 3,
     }
 }

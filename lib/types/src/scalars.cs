@@ -15,7 +15,7 @@ namespace Z0.Types
     public readonly struct scalars
     {
         [MethodImpl(Inline), Op]
-        public static ScalarType type(IndicatorKind kind, ByteSize storage, BitWidth data)
+        public static ScalarType type(PrimalKind kind, ByteSize storage, BitWidth data)
             => new ScalarType(kind, storage,data);
 
         [MethodImpl(Inline), Op]

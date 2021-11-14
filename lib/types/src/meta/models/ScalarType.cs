@@ -12,14 +12,14 @@ namespace Z0.Types
     [StructLayout(LayoutKind.Sequential, Pack=1)]
     public struct ScalarType
     {
-        public readonly IndicatorKind Kind;
+        public readonly PrimalKind Kind;
 
         public readonly uint StorageSize;
 
         public readonly uint DataWidth;
 
         [MethodImpl(Inline)]
-        public ScalarType(IndicatorKind kind, uint s, uint w)
+        public ScalarType(PrimalKind kind, uint s, uint w)
         {
             Kind = kind;
             StorageSize = s;

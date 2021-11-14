@@ -4,17 +4,12 @@
     <OutputType>Exe</OutputType>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <AssemblyName>ztest</AssemblyName>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <EnablePreviewFeatures>True</EnablePreviewFeatures>
-    <LangVersion>Preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(ZTools)"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Runtime.Experimental" Version="6.0.0"/>
+    <ProjectReference Include="$(AsmModels)" />
+    <ProjectReference Include="$(ZLib)" />
+    <ProjectReference Include="$(ZTools)" />
   </ItemGroup>
 
 </Project>

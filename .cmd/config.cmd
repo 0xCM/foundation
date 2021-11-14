@@ -1,4 +1,5 @@
 @echo off
+set RepoId=z0.core
 set SlnRoot=j:\z0\foundation
 set BuildRoot=%SlnRoot%\.build
 set LibProjId=lib

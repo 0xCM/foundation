@@ -14,23 +14,6 @@ namespace Z0.Types
     {
         public static CellTypeParser Service => default;
 
-        public Outcome Validate()
-        {
-            const string Case1 = "13u";
-            const string Case2 = "(13:16)u";
-
-            var result = Outcome.Failure;
-            if(Parse(Case1,  out var ct1))
-                result = ct1.ContentWidth == 13 && ct1.StorageWidth == 13 && ct1.Class == PrimalKind.UnsignedInt;
-
-            if(result.Fail)
-                return result;
-
-            if(Parse(Case2,  out var ct2))
-                result = ct2.ContentWidth == 13 && ct2.StorageWidth == 16 && ct1.Class == PrimalKind.UnsignedInt;
-
-            return result;
-        }
 
         public Outcome Parse(string src, out CellType dst)
         {
@@ -43,7 +26,7 @@ namespace Z0.Types
             var length = input.Length;
             var q = length - 1;
 
-            if(!types.parse(input[q], out PrimalKind pc))
+            if(!types.parse(input[q], out var pc))
                 return result.Fail;
 
             var i = text.index(input, Chars.Colon);

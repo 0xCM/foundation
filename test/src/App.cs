@@ -17,6 +17,7 @@ namespace Z0
         void RunTests()
         {
             SpanBufferChecker.create(Wf).Run();
+            KrDChecks.create(Wf).Run();
         }
     }
 

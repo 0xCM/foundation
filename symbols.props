@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
       <ZLib>$(Src)lib\z0.lib.csproj</ZLib>
-      <AsmM>$(Src)asm.models\z0.asm.models.csproj</AsmM>
+      <AsmModels>$(Src)asm.models\z0.asm.models.csproj</AsmModels>
       <ZTools>$(Src)tools\z0.tools.csproj</ZTools>
     </PropertyGroup>
 </Project>
