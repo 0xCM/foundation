@@ -81,13 +81,12 @@ namespace Z0.Types
             where T : unmanaged
                 => ClassCache.classifier<K,T>();
 
-
-        internal static string format(PrimitiveKind src)
+        internal static string format(PrimalKind src)
             => src.ToString().ToLower();
 
-        internal static Outcome parse(char src, out PrimitiveKind dst)
+        internal static Outcome parse(char src, out PrimalKind dst)
         {
-            var symbols = Symbols.index<PrimitiveKind>();
+            var symbols = Symbols.index<PrimalKind>();
             dst = default;
             return false;
         }

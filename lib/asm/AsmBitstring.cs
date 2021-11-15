@@ -15,8 +15,6 @@ namespace Z0.Asm
     /// </summary>
     public readonly struct AsmBitstring
     {
-
-
         [MethodImpl(Inline), Op]
         public static uint render(in AsmHexCode src, Span<char> dst)
         {

@@ -19,12 +19,6 @@ namespace Z0.Types
         }
     }
 
-    public readonly struct DataTypes
-    {
-
-
-    }
-
     [SymSource]
     public enum DataKind : byte
     {

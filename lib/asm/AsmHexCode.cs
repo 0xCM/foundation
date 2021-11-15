@@ -211,7 +211,6 @@ namespace Z0.Asm
             return dst;
         }
 
-
         [Op]
         public static string bitstring(in AsmHexCode src)
         {

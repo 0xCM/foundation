@@ -19,14 +19,14 @@ namespace Z0.Types
 
         public uint StorageWidth {get;}
 
-        public PrimalClass Class {get;}
+        public PrimalKind Kind {get;}
 
         [MethodImpl(Inline)]
-        public CellType(uint content, uint storage, PrimalClass @class)
+        public CellType(uint content, uint storage, PrimalKind @class)
         {
             ContentWidth = content;
             StorageWidth = storage;
-            Class = @class;
+            Kind = @class;
         }
 
         public static CellType Empty => default;

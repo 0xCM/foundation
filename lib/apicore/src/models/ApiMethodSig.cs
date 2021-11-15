@@ -28,29 +28,27 @@ namespace Z0
 
         }
 
-        public abstract class ApiMethodSig<S,K> : ApiSig<S,K>
+        public abstract class MethodSig<S,K> : ApiSig<S,K>
             where K : unmanaged
-            where S : ApiMethodSig<S,K>, new()
+            where S : MethodSig<S,K>, new()
         {
-
-            protected ApiMethodSig(K kind)
+            protected MethodSig(K kind)
                 : base(kind)
             {
 
             }
         }
 
-        public abstract class ApiTypeSig<S,K> : ApiSig<S,K>
+        public abstract class TypeSig<S,K> : ApiSig<S,K>
             where K : unmanaged
-            where S : ApiTypeSig<S,K>, new()
+            where S : TypeSig<S,K>, new()
         {
-            protected ApiTypeSig(K kind)
+            protected TypeSig(K kind)
                 : base(kind)
             {
 
             }
         }
-
 
         public enum MethodSigKind : uint
         {
@@ -61,7 +59,6 @@ namespace Z0
             BinaryOperator,
 
             TernaryOperator
-
         }
 
         public enum TypeSigKind : uint
@@ -69,11 +66,10 @@ namespace Z0
             None,
 
             Primitive
-
         }
 
 
-        public class BinaryOperator : ApiMethodSig<BinaryOperator,MethodSigKind>
+        public class BinaryOperator : MethodSig<BinaryOperator,MethodSigKind>
         {
             public BinaryOperator()
                 : base(MethodSigKind.BinaryOperator)
@@ -82,5 +78,4 @@ namespace Z0
             }
         }
     }
-
 }

@@ -4,9 +4,6 @@
 //-----------------------------------------------------------------------------
 namespace Z0.Types
 {
-    using System;
-    using System.Runtime.CompilerServices;
-
     using static Root;
 
     [Formatter(typeof(CellType))]
@@ -18,9 +15,9 @@ namespace Z0.Types
         {
             var dst = EmptyString;
             if(src.ContentWidth == src.StorageWidth)
-                dst = string.Format("{0}{1}", src.ContentWidth, types.format(src.Class));
+                dst = string.Format("{0}{1}", src.ContentWidth, types.format(src.Kind));
             else
-                dst = string.Format("({0}:{1}){2}", src.ContentWidth, src.StorageWidth, types.format(src.Class));
+                dst = string.Format("({0}:{1}){2}", src.ContentWidth, src.StorageWidth, types.format(src.Kind));
             return dst;
         }
     }

@@ -16,7 +16,7 @@ namespace Z0
     /// <remarks>
     /// [Sign8Kind:7 | PrimalKindId:3..6 | Log2x8:0..2]
     /// <remarks>
-    public enum PrimitiveKind : byte
+    public enum PrimalKind : byte
     {
         None = 0,
 

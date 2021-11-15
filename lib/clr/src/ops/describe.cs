@@ -12,7 +12,7 @@ namespace Z0
     partial struct Clr
     {
         [MethodImpl(Inline), Op]
-        public static ClrPrimitiveInfo describe(PrimitiveKind src)
+        public static ClrPrimitiveInfo describe(PrimalKind src)
             => new ClrPrimitiveInfo(src, width(src), sign(src), (PrimalCode)typecode(src));
     }
 }
